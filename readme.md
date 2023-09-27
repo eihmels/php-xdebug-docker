@@ -1,6 +1,8 @@
-# PHP CLI Container for Development with xdebug in it
+# PHP CLI Container for Development with Extentions in it
 
 based on https://hub.docker.com/_/php
+
+run php -m to see what extentions are there
 
 ## PHP8.0
 
@@ -41,25 +43,9 @@ create the latest image
   docker build -t php8.2-xdebug ./8.2
 ```
 
-run a cli script
+## composer
 
 ```bash
-    docker run -it --rm --name php8.3 -v $(pwd):/usr/src/myapp -w /usr/src/myapp php8.2-xdebug:latest php $argv
-```
-
-## Use running Containers for your development environemnt
-
-if you want to use php on Cli using an Alias use 
-
-```bash
-sh build.sh
-```
-
-to create the running containers and add the alias looks like
-
-```bash
-    alias php8.0="docker exec -it php8.0 php $argv"
-    alias php8.1="docker exec -it php8.1 php $argv"
-    alias php8.2="docker exec -it php8.2 php $argv"
+  docker build -t composer:with-extentions ./composer
 ```
 
